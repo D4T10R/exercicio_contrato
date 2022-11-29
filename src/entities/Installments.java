@@ -1,16 +1,19 @@
 package entities;
 
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.Date;
 
 public class Installments {
     
     // ATRIBUTOS
+    private static SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
     private Date dueDate;
     private Double amount;
     // ATRIBUTOS
 
     // CONSTRUTORES
-    public Installments(Date dueDate, Double amount) {
+    public Installments(LocalDate localDate, Double amount) {
         this.dueDate = dueDate;
         this.amount = amount;
     }
@@ -35,5 +38,11 @@ public class Installments {
     }
     // ENCAPSULAMENTO
     
+
+    // METODOS
+    public String toString() {
+        return sdf.format(dueDate) + " - " + amount;
+    }
+    // METODOS
 
 }
